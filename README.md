@@ -6,7 +6,7 @@ This is a lightweight and efficient text-to-speech (TTS) desktop application tha
 ---
 
 ## Features
-- **Quick TTS Access**: Select any text and press `Ctrl + Insert` to hear it read aloud.
+- **Quick TTS Access**: Select any text and press `Ctrl + Insert` to hear it read aloud, press `Ctrl + End` to stop
 - **Customizable Settings**: 
   - Adjust words per minute (WPM) for TTS playback.
   - Choose from available system voices.

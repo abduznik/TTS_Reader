@@ -108,6 +108,11 @@ def on_ctrl_insert():
     """Handler for the Ctrl + Insert hotkey."""
     copy_selected_text()
 
+def on_ctrl_end():
+    stop_tts_thread()
+    time.sleep(0.1)
+    start_tts_thread()
+
 def open_last_saved_txt():
     """Open the last saved text file."""
     if last_saved_file and os.path.exists(last_saved_file):
@@ -140,7 +145,7 @@ def open_settings():
     settings_window.configure(bg="#2E2E2E")
 
     tk.Label(settings_window, text="Instructions:\n"
-                                    "1. Select text and press Ctrl + Insert to copy and read aloud.\n"
+                                    "1. Select text and press Ctrl + Insert to copy and read aloud\n Ctrl + End to stop\n"
                                     "2. Adjust TTS speed or select voice in the options below.",
              bg="#2E2E2E", fg="white").pack(pady=20)
 
@@ -201,4 +206,5 @@ load_settings()
 # Start the TTS thread and tray icon
 start_tts_thread()
 keyboard.add_hotkey('ctrl + insert', on_ctrl_insert)
+keyboard.add_hotkey('ctrl + end', on_ctrl_end)
 icon.run()
